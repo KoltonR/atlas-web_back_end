@@ -1,26 +1,32 @@
-export default class Car {
-    constructor(brand, motor, color) {
-      // Create objs
-      this._brand = brand;
-      this._motor = motor;
-      this._color = color;
-    }
-  
-    // Methods
-  
-    cloneCar() {
-      const NewObj = this.constructor[Symbol.species] || this.constructor;
-      const clone = new NewObj();
-      return clone;
-    }
-  
-    // Setters
-  
-    // Getters
+/* 10. Vroom
+* Implement a class named Car:
+* Constructor attributes:
+*   @brand (String)
+*   @motor (String)
+*   @color (String)
+* Each attribute must be stored in an “underscore” attribute version
+*  (ex: name is stored in _name)
+*   Add a method named cloneCar.
+* This method should return a new object of the class.
+*   Hint: Symbols in ES6
+*/
+
+class Car {
+  constructor(brand, motor, color) {
+    this._brand = brand;
+    this._motor = motor;
+    this._color = color;
   }
-  /* class TestCar extends Car {};
-  const tc1 = new TestCar("Nissan", "Turbo", "Pink");
-  const tc2 = tc1.cloneCar();
-  console.log(tc1 instanceof TestCar);
-  console.log(tc2 instanceof TestCar);
-  console.log(tc1 == tc2); */
+
+  cloneCar() {
+    // Create a new object with the same prototype as this object
+    const newCar = Object.create(Object.getPrototypeOf(this));
+    // Copy the attributes to the new object
+    newCar._brand = this._brand;
+    newCar._motor = this._motor;
+    newCar._color = this._color;
+    return newCar;
+  }
+}
+
+export default Car;
