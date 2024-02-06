@@ -12,21 +12,21 @@
 */
 
 class Car {
-    constructor(brand, motor, color) {
-      this._brand = brand;
-      this._motor = motor;
-      this._color = color;
-    }
-  
-    cloneCar() {
-      // Create a new object with the same prototype as this object
-      const newCar = Object.create(Object.getPrototypeOf(this));
-      // Copy the attributes to the new object
-      newCar._brand = this._brand;
-      newCar._motor = this._motor;
-      newCar._color = this._color;
-      return newCar;
-    }
+  constructor(brand, motor, color) {
+    this._brand = brand;
+    this._motor = motor;
+    this._color = color;
   }
-  
+
+  cloneCar() {
+    // Create a new object with the same prototype as this object
+    const newCar = Object.create(Object.getPrototypeOf(this));
+    // Copy the attributes to the new object
+    newCar._brand = this._brand;
+    newCar._motor = this._motor;
+    newCar._color = this._color;
+    return newCar;
+  }
+}
+
   export default Car;
