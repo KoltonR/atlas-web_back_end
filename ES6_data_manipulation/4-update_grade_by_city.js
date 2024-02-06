@@ -2,7 +2,7 @@ export default function updateStudentGradeByCity(studentsList, city, newGrades) 
   if (!(studentsList instanceof Array)) {
     return [];
   }
- 
+
   function addGrade(student) {
     newGrades.forEach((person) => {
       if (person.studentId === student.id) {
