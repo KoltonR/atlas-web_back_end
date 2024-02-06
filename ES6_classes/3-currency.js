@@ -22,13 +22,13 @@ export default class Currency {
 
   get name() {
     return this._name;
-    }
+  }
 
   set name(newName) {
-      if (typeof newName !== 'string') {
-        throw new TypeError('Name must be a string.');
-      } else {
-        this._name = newName;
-      }
+    if (typeof newName !== 'string') {
+      throw new TypeError('Name must be a string.');
+    } else {
+      this._name = newName;
     }
   }
+}
